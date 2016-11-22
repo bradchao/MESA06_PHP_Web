@@ -1,7 +1,10 @@
 <?php
     $account = $_POST['account']; $passwd = $_POST['passwd'];
-    $newPass1 = password_hash($passwd, PASSWORD_DEFAULT);
-    echo $newPass1 . '<br />';
+    $newPass = password_hash($passwd, PASSWORD_DEFAULT);
 
-    $newPass2 = password_hash($passwd, PASSWORD_DEFAULT);
-    echo $newPass2 . '<br />';
+    try{
+        $pdo = new PDO("mysql:host=localhost;dbname=iii","root","12345678");
+
+    }catch (Exception $e){
+        die("Server Busy");
+    }
