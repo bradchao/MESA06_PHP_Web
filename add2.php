@@ -15,7 +15,11 @@
             if ($upload['error'] == 0){
                 if (copy($upload['tmp_name'], "upload/icon_{$newid}.jpg")){
                     echo 'OK2';
+                }else{
+                    echo 'Copy Fail';
                 }
+            }else{
+                echo 'Upload Fail:' . $upload['error'];
             }
         }else{
             echo 'XX';
