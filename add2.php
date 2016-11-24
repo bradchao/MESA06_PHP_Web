@@ -8,7 +8,7 @@
         $stmt->bindParam(1, $account);
         $stmt->bindParam(2, $newPass);
         if ($stmt->execute()){
-            echo 'OK';
+            //echo 'OK';
             // 以下進行檔案上傳處理
             $newid = $pdo->lastInsertId();
             $upload = $_FILES['upload'];    // 上傳檔案的資訊 => 陣列
